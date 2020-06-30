@@ -1,0 +1,140 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Match</title>
+</head>
+<body>
+    @*<div id="loginBlock">
+        Login:<br />
+        <input id="username" type="text" />
+        <input id="password" type="text" />
+        <input id="loginBtn" type="button" value="Login" />
+    </div><br />*@
+
+    @*<div id="header"></div><br />*@
+
+    <div id="inputForm">
+        <input type="button" id="fireBtn" value="Fire" />
+        <input type="button" id="left" value="left" /> left <br />
+        <input type="button" id="right" value="right" /> right <br />
+        <input type="button" id="up" value="up" /> up <br />
+        <input type="button" id="down" value="down" /> down <br />
+
+        <input type="button" id="getPlayersBtn" value="Get players" />
+    </div>
+    <div id="chatroom"></div>
+    <script src="js/signalr/dist/browser/signalr.min.js"></script>
+
+    <script>
+        //let token;
+        //let username;
+
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl("/match/room"/*, { accessTokenFactory: () => token }*/)
+            .build();
+
+        //hubConnection.on("Receive", function (message, userName) {
+ 
+        //    let userNameElem = document.createElement("b");
+        //    userNameElem.appendChild(document.createTextNode(userName + ": "));
+ 
+        //    let elem = document.createElement("p");
+        //    elem.appendChild(userNameElem);
+        //    elem.appendChild(document.createTextNode(message));
+ 
+        //    var firstElem = document.getElementById("chatroom").firstChild;
+        //    document.getElementById("chatroom").insertBefore(elem, firstElem);
+        //});
+
+        // Authentication
+        //document.getElementById("loginBtn").addEventListener("click", function (e) {
+        //    console.log("Fungujuu");
+             
+        //    var request = new XMLHttpRequest();
+        //    // Send a POSt to api /match/join
+        //    request.open("POST", "api/game/match/join");   
+        //    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        //    request.addEventListener("load", function () {
+        //        console.log(request.status);
+        //        if (request.status < 400) { // If success
+ 
+        //            let data = JSON.parse(request.response);   // Parse response
+        //            token = data.ApiToken;
+        //            username = data.Username;
+ 
+        //            hubConnection.start()       // Start hub connection
+        //            .catch(err => {  
+        //                console.error(err.toString());
+        //                document.getElementById("loginBtn").disabled = true;
+        //            });
+        //        }
+        //    });
+        //    // Send request
+        //    var name = document.getElementById("username").value;
+        //    var pswd = document.getElementById("password").value;
+        //    request.send("username=" + name +
+        //        "&password=" + pswd);
+        //});
+
+
+        hubConnection.on("Fire", function () {
+
+            let elem = document.createElement("p");
+            elem.appendChild(document.createTextNode("Client is shooting"));
+            let firstElem = document.getElementById("chatroom").firstChild;
+            document.getElementById("chatroom").insertBefore(elem, firstElem);
+
+        });
+
+        hubConnection.on("Move", function (position) {
+
+            let elem = document.createElement("p");
+            elem.appendChild(document.createTextNode("Position: " + position));
+            let firstElem = document.getElementById("chatroom").firstChild;
+            document.getElementById("chatroom").insertBefore(elem, firstElem);
+
+        });
+
+        hubConnection.on("GetPlayers", function (playerIds) {
+
+            let elem = document.createElement("p");
+            elem.appendChild(document.createTextNode("Received players"));
+            let firstElem = document.getElementById("chatroom").firstChild;
+            document.getElementById("chatroom").insertBefore(elem, firstElem);
+
+        });
+
+        document.getElementById("fireBtn").addEventListener("click", function (e) {
+            hubConnection.invoke("Fire");
+        });
+
+        document.getElementById("left").addEventListener("click", function (e) {
+            hubConnection.invoke("Move", "left");
+        });
+
+        document.getElementById("right").addEventListener("click", function (e) {
+            hubConnection.invoke("Move", "right");
+        });
+
+        document.getElementById("up").addEventListener("click", function (e) {
+            hubConnection.invoke("Move", "up");
+        });
+
+        document.getElementById("down").addEventListener("click", function (e) {
+            hubConnection.invoke("Move", "down");
+        });
+
+        document.getElementById("getPlayersBtn").addEventListener("click", function (e) {
+            hubConnection.invoke("GetPlayers");
+        });
+
+        hubConnection.start();
+    </script>
+</body>
+</html>

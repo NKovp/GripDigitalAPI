@@ -1,0 +1,53 @@
+2020-06-26 08:22:55.2739||DEBUG|GripDigitalAPI.Program|init main function 
+2020-06-26 08:23:40.9817||INFO|GripDigitalAPI.Controllers.GameController|[Get] => (Starting...) 
+DEBUG|2020-06-26 08:44:18.2175|GripDigitalAPI.Program|init main function 
+ERROR|2020-06-26 08:44:33.0553|GripDigitalAPI.Controllers.GameController|[PostLogin] => (Exception) : Message: Value cannot be null. (Parameter 'key') 
+ERROR|2020-06-26 08:44:35.7245|GripDigitalAPI.Controllers.GameController|[PostLogin] => (Exception) : System.ArgumentNullException: Value cannot be null. (Parameter 'key')
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at GripDigitalAPI.Controllers.GameController.PostLogin(String username, String password) in C:\Nikita\Projects\GripDigitalAPI\GripDigitalAPI\Controllers\GameController.cs:line 69 
+DEBUG|2020-06-26 08:47:02.7828|GripDigitalAPI.Program|init main function 
+INFO|2020-06-26 08:48:13.9857|GripDigitalAPI.Controllers.GameController|[PostLogin] => Password: Test is wrong.
+DEBUG|2020-06-26 08:53:49.4114|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-27 22:39:02.4409|GripDigitalAPI.Program|init main function 
+WARN|2020-06-27 22:51:08.6165|GripDigitalAPI.Controllers.GameController|[PostLogin] => Invalid username or password. 
+ERROR|2020-06-27 22:51:08.6771|GripDigitalAPI.Controllers.GameController|[PostLogin] => (Exception) : Message: Object reference not set to an instance of an object. 
+ERROR|2020-06-27 22:51:08.7559|GripDigitalAPI.Controllers.GameController|[PostLogin] => (Exception) : System.NullReferenceException: Object reference not set to an instance of an object.
+   at GripDigitalAPI.Controllers.GameController.PostLogin(String username, String password) in C:\Nikita\Projects\GripDigitalAPI\GripDigitalAPI\Controllers\GameController.cs:line 116 
+WARN|2020-06-27 22:51:34.8101|GripDigitalAPI.Controllers.GameController|[PostLogin] => Invalid username or password. 
+ERROR|2020-06-27 22:52:08.1075|GripDigitalAPI.Controllers.GameController|[PostLogin] => (Exception) : Message: Object reference not set to an instance of an object. 
+ERROR|2020-06-27 22:52:08.1323|GripDigitalAPI.Controllers.GameController|[PostLogin] => (Exception) : System.NullReferenceException: Object reference not set to an instance of an object.
+   at GripDigitalAPI.Controllers.GameController.PostLogin(String username, String password) 
+WARN|2020-06-27 22:52:13.4219|GripDigitalAPI.Controllers.GameController|[PostLogin] => Invalid username or password. 
+DEBUG|2020-06-27 23:35:09.5681|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 09:27:43.7700|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 14:22:35.3241|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 14:28:42.1551|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 14:31:16.9674|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 14:51:33.4012|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 14:53:39.0493|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 15:23:35.0755|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 15:25:50.5270|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 15:29:08.5968|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 15:30:38.9171|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 15:48:52.8235|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 15:53:40.2743|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 15:58:42.2567|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 20:47:59.5985|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:05:24.9342|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:09:14.5358|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:14:36.3720|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:16:55.1918|GripDigitalAPI.Program|init main function 
+WARN|2020-06-29 21:17:19.8525|GripDigitalAPI.Controllers.GameController|[PostLogin] => Invalid username or password. 
+WARN|2020-06-29 21:18:38.8362|GripDigitalAPI.Controllers.GameController|[PostLogin] => Invalid username or password. 
+WARN|2020-06-29 21:18:57.3356|GripDigitalAPI.Controllers.GameController|[PostLogin] => Invalid username or password. 
+WARN|2020-06-29 21:19:33.2095|GripDigitalAPI.Controllers.GameController|[PostLogin] => Invalid username or password. 
+DEBUG|2020-06-29 21:20:41.1729|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:37:01.9434|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:43:04.4994|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:52:00.9545|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:53:34.9843|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:56:03.1785|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 21:58:26.3656|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 22:01:36.6489|GripDigitalAPI.Program|init main function 
+DEBUG|2020-06-29 22:02:40.3029|GripDigitalAPI.Program|init main function 
